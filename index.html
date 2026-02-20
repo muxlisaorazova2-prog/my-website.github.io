@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O'razova Muxlisa | Shaxsiy Sahifa</title>
+    <title>O'razova Muxlisa | Digital Card</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,108 +14,143 @@
         }
 
         body {
-            /* Nafis gradient fon */
-            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            /* Rasmga o'xshash nafis rangli fon */
+            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 50%, #fbc2eb 100%);
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #333;
+            overflow: hidden;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 40px 30px;
-            border-radius: 40px;
+        .main-container {
             text-align: center;
-            width: 350px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border: 1px solid white;
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
         }
 
-        .profile-img {
-            width: 110px;
-            height: 110px;
-            background: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-            border-radius: 50%;
+        /* Profil rasmi uchun joy */
+        .profile-box {
+            width: 200px;
+            height: 140px;
+            background: white;
             margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            box-shadow: 0 10px 20px rgba(255, 154, 158, 0.3);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 5px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .profile-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         h1 {
-            font-size: 26px;
+            font-size: 32px;
             color: #2d3436;
             margin-bottom: 5px;
-            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        p {
-            font-size: 15px;
-            color: #636e72;
-            margin-bottom: 30px;
-        }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .link-item {
-            text-decoration: none;
-            color: white;
-            padding: 14px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        /* Ijtimoiy tarmoqlar ranglari */
-        .telegram { background-color: #0088cc; }
-        .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-        .phone { background-color: #25d366; }
-
-        .link-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-            opacity: 0.9;
-        }
-
-        i {
+        .subtitle {
             font-size: 18px;
+            color: #636e72;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        /* Tugmalar qatori (Rasmga o'xshash) */
+        .links-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card-link {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            width: 180px;
+            padding: 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+        }
+
+        .card-link:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .card-link i {
+            font-size: 35px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .telegram-icon { color: #0088cc; }
+        .instagram-icon { color: #e1306c; }
+        .phone-icon { color: #25d366; }
+
+        .card-link span {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .card-link small {
+            color: #777;
+            font-size: 12px;
+        }
+
+        /* Mobil qurilmalar uchun moslashuvchanlik */
+        @media (max-width: 600px) {
+            .links-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card-link { width: 80%; }
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <div class="profile-img">🌸</div>
-        
+    <div class="main-container">
+        <div class="profile-box">
+            <img src="https://via.placeholder.com/200x140?text=Muxlisa" alt="O'razova Muxlisa">
+        </div>
+
         <h1>O'razova Muxlisa</h1>
-        <p>Mening rasmiy sahifamga xush kelibsiz!</p>
+        <div class="subtitle">Digital Creator | Innovator</div>
 
-        <div class="links">
-            <a href="https://t.me/MUXLISA_USERNAME" target="_blank" class="link-item telegram">
-                <i class="fab fa-telegram"></i> Telegram
+        <div class="links-grid">
+            
+            <a href="https://t.me/MUXLISA_USERNAME" class="card-link">
+                <i class="fab fa-telegram telegram-icon"></i>
+                <span>Telegram</span>
+                <small>@MUXLISA_USERNAME</small>
             </a>
 
-            <a href="https://instagram.com/MUXLISA_USERNAME" target="_blank" class="link-item instagram">
-                <i class="fab fa-instagram"></i> Instagram
+            <a href="https://instagram.com/MUXLISA_USERNAME" class="card-link">
+                <i class="fab fa-instagram instagram-icon"></i>
+                <span>Instagram</span>
+                <small>@MUXLISA_USERNAME</small>
             </a>
 
-            <a href="tel:+998888052206" class="link-item phone">
-                <i class="fas fa-phone"></i> +998 88 805 22 06
+Órazova Muxlisa, [20.02.2026 8:49]
+<a href="tel:+998888052206" class="card-link">
+                <i class="fas fa-phone-alt phone-icon"></i>
+                <span>Call Me</span>
+                <small>+998 88 805 22 06</small>
             </a>
+
         </div>
     </div>
 
