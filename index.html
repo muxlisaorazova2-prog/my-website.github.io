@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O'razova Muxlisa | Shaxsiy Sahifa</title>
+    <title>O'razova Muxlisa | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,144 +14,158 @@
         }
 
         body {
-            /* Nafis gradient fon */
-            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 50%, #fbc2eb 100%);
+            background: radial-gradient(circle at top right, #e0c3fc 0%, #8ec5fc 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        .main-wrapper {
+        .main-container {
             width: 100%;
-            max-width: 650px;
+            max-width: 800px;
+        }
+
+        /* Glassmorphism karta */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px);
+            border-radius: 40px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
             text-align: center;
         }
 
-        /* Profil kartasi */
-        .header-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            padding: 35px;
-            border-radius: 30px;
+        .profile-section {
             margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .profile-img {
-            width: 120px;
-            height: 120px;
-            background: #fff;
+            width: 130px;
+            height: 130px;
+            background: white;
             border-radius: 50%;
-            margin: 0 auto 15px;
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 55px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            border: 4px solid white;
+            font-size: 60px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 5px solid rgba(255, 255, 255, 0.8);
         }
 
         h1 {
-            font-size: 28px;
-            color: #2d3436;
+            color: #1a2a6c;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .edu-info {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 15px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            font-size: 14px;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .ai-goal {
+            background: linear-gradient(90deg, #1a2a6c, #b21f1f);
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 35px;
+            font-style: italic;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .ai-goal b {
+            display: block;
             margin-bottom: 5px;
-            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
         }
 
-        .subtitle {
-            font-size: 16px;
-            color: #636e72;
-            margin-bottom: 5px;
+        /* Tugmalar strukturasi */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
         }
 
-        /* Tugmalar qatori - Flexbox orqali tekislash */
-        .button-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap; /* Mobil ekranda pastga tushishi uchun */
-        }
-
-        .social-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(5px);
-            width: 180px;
-            padding: 25px 10px;
+        .social-item {
+            background: white;
+            padding: 20px;
             border-radius: 25px;
             text-decoration: none;
             color: #333;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            font-weight: 600;
+            transition: 0.3s;
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .social-card:hover {
-            transform: translateY(-10px);
-            background: white;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        .social-item:hover {
+            transform: translateY(-8px);
+            background: #f8f9fa;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
         }
 
-        .social-card i {
-            font-size: 35px;
-            margin-bottom: 12px;
+        .social-item i {
+            font-size: 28px;
         }
 
-        /* Ranglar */
-        .fa-telegram { color: #0088cc; }
-        .fa-instagram { color: #e1306c; }
-        .fa-phone-volume { color: #25d366; }
+        .tg { color: #0088cc; }
+        .inst { color: #e1306c; }
+        .phone { color: #25d366; }
 
-        .social-card span {
-            font-weight: 600;
-            font-size: 16px;
-            margin-bottom: 4px;
-        }
-
-        .social-card small {
-            font-size: 11px;
-            color: #888;
-        }
-
-        /* Mobil qurilmalar uchun */
-        @media (max-width: 480px) {
-            .social-card {
-                width: 100%; /* Telefonda tugmalar to'liq eniga yoyiladi */
-            }
+        @media (max-width: 500px) {
+            .social-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="main-wrapper">
-        <div class="header-card">
-            <div class="profile-img">🌸</div>
-            <h1>O'razova Muxlisa</h1>
-            <p class="subtitle">Digital Creator | Innovator</p>
-        </div>
-
-        <div class="button-grid">
+    <div class="main-container">
+        <div class="glass-card">
             
-            <a href="https://t.me/muxli_sa9706" target="_blank" class="social-card">
-                <i class="fab fa-telegram"></i>
-                <span>Telegram</span>
-                <small>@muxli_sa9706</small>
-            </a><a href="https://instagram.com/mux_lisa9706" target="_blank" class="social-card">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-                <small>@mux_lisa9706</small>
-            </a>
+            <div class="profile-section">
+                <div class="profile-img">👩‍💻</div>
+                <h1>O'razova Muxlisa</h1><div class="edu-info">
+                    <i class="fas fa-university"></i> <b>Qarshi davlat universiteti</b><br>
+                    Matematika va kompyuter ilmlari fakulteti<br>
+                    Axborot tizimlari va texnologiyalari yo'nalishi talabasi
+                </div>
 
-            <a href="tel:+998888052206" class="social-card">
-                <i class="fas fa-phone-volume"></i>
-                <span>Bog'lanish</span>
-                <small>+998 88 805 22 06</small>
-            </a>
+                <div class="ai-goal">
+                    <b>Mening maqsadim</b>
+                    "Sun'iy intellekt (AI) texnologiyalari orqali murakkab matematik muammolarga yechim topish va O'zbekistonda IT sohasini yangi bosqichga olib chiqish."
+                </div>
+            </div>
+
+            <div class="social-grid">
+                <a href="https://t.me/muxli_sa9706" target="_blank" class="social-item">
+                    <i class="fab fa-telegram tg"></i>
+                    Telegram
+                </a>
+
+                <a href="https://instagram.com/mux_lisa9706" target="_blank" class="social-item">
+                    <i class="fab fa-instagram inst"></i>
+                    Instagram
+                </a>
+
+                <a href="tel:+998888052206" class="social-item">
+                    <i class="fas fa-phone-alt phone"></i>
+                    Aloqa
+                </a>
+            </div>
 
         </div>
     </div>
