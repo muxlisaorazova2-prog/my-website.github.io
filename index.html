@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O'razova Muxlisa | Portfolio</title>
+    <title>O'razova Muxlisa | AI Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+        :root {
+            --primary: #1a2a6c;
+            --secondary: #b21f1f;
+            --glass: rgba(255, 255, 255, 0.2);
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
         body {
-            background: radial-gradient(circle at top right, #e0c3fc 0%, #8ec5fc 100%);
+            background: #0f2027; /* To'q ko'k, IT uslubidagi fon */
+            background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+            color: white;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -22,151 +25,92 @@
             padding: 40px 20px;
         }
 
-        .main-container {
-            width: 100%;
-            max-width: 800px;
-        }
-
-        /* Glassmorphism karta */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(15px);
-            border-radius: 40px;
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 35px;
             padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            animation: fadeIn 1.5s ease-out;
         }
 
-        .profile-section {
-            margin-bottom: 30px;
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         .profile-img {
-            width: 130px;
-            height: 130px;
-            background: white;
-            border-radius: 50%;
+            width: 120px; height: 120px;
+            background: white; border-radius: 50%;
             margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             font-size: 60px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border: 5px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
         }
 
-        h1 {
-            color: #1a2a6c;
-            font-size: 32px;
-            margin-bottom: 10px;
+        h1 { font-size: 28px; margin-bottom: 10px; color: #fff; }
+
+        .uni-tag {
+            font-size: 13px; color: #00d2ff;
+            text-transform: uppercase; letter-spacing: 2px;
+            margin-bottom: 20px; display: block;
         }
 
-        .edu-info {
-            background: rgba(255, 255, 255, 0.6);
-            padding: 15px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-            font-size: 14px;
-            color: #2c3e50;
-            line-height: 1.6;
+        .skills-container {
+            display: flex; justify-content: center; gap: 10px;
+            flex-wrap: wrap; margin-bottom: 30px;
         }
 
-        .ai-goal {
-            background: linear-gradient(90deg, #1a2a6c, #b21f1f);
-            color: white;
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 35px;
-            font-style: italic;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        .skill-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 15px; border-radius: 50px;
+            font-size: 12px; border: 1px solid rgba(255,255,255,0.3);
         }
 
-        .ai-goal b {
-            display: block;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 2px;
+        .goal-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px; border-radius: 20px;
+            border-left: 4px solid #00d2ff;
+            margin-bottom: 30px; font-style: italic; text-align: left;
         }
 
-        /* Tugmalar strukturasi */
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
+        .links-grid {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;
         }
 
-        .social-item {
-            background: white;
-            padding: 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 600;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        .social-btn {
+            background: white; color: #1a2a6c;
+            text-decoration: none; padding: 15px;
+            border-radius: 20px; font-weight: 600;
+            transition: 0.3s; font-size: 14px;
         }
 
-        .social-item:hover {
-            transform: translateY(-8px);
-            background: #f8f9fa;
-            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
-        }
+        .social-btn:hover { transform: scale(1.05); box-shadow: 0 0 15px #00d2ff; }
 
-        .social-item i {
-            font-size: 28px;
-        }
-
-        .tg { color: #0088cc; }
-        .inst { color: #e1306c; }
-        .phone { color: #25d366; }
-
-        @media (max-width: 500px) {
-            .social-grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 500px) { .links-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <div class="glass-card">
-            
-            <div class="profile-section">
-                <div class="profile-img">👩‍💻</div>
-                <h1>O'razova Muxlisa</h1><div class="edu-info">
-                    <i class="fas fa-university"></i> <b>Qarshi davlat universiteti</b><br>
-                    Matematika va kompyuter ilmlari fakulteti<br>
-                    Axborot tizimlari va texnologiyalari yo'nalishi talabasi
-                </div>
+    <div class="portfolio-card">
+        <div class="profile-img">👩‍🔬</div>
+        <h1>O'razova Muxlisa</h1>
+        <span class="uni-tag">Qarshi DU | IT Talabasi</span>
 
-                <div class="ai-goal">
-                    <b>Mening maqsadim</b>
-                    "Sun'iy intellekt (AI) texnologiyalari orqali murakkab matematik muammolarga yechim topish va O'zbekistonda IT sohasini yangi bosqichga olib chiqish."
-                </div>
-            </div>
+        <div class="skills-container">
+            <span class="skill-badge">AI & ML</span>
+            <span class="skill-badge">Algorithms</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">SQL</span>
+        </div>
 
-            <div class="social-grid">
-                <a href="https://t.me/muxli_sa9706" target="_blank" class="social-item">
-                    <i class="fab fa-telegram tg"></i>
-                    Telegram
-                </a>
+        <div class="goal-box">
+            "Axborot tizimlari va AI sohasida tadqiqotlar olib borib, kelajakda intellektual tizimlarni rivojlantirishga hissa qo'shmoqchiman."
+        </div>
 
-                <a href="https://instagram.com/mux_lisa9706" target="_blank" class="social-item">
-                    <i class="fab fa-instagram inst"></i>
-                    Instagram
-                </a>
-
-                <a href="tel:+998888052206" class="social-item">
-                    <i class="fas fa-phone-alt phone"></i>
-                    Aloqa
-                </a>
-            </div>
-
+        <div class="links-grid"><a href="https://t.me/muxli_sa9706" target="_blank" class="social-btn"><i class="fab fa-telegram"></i> TG</a>
+            <a href="https://instagram.com/mux_lisa9706" target="_blank" class="social-btn"><i class="fab fa-instagram"></i> INST</a>
+            <a href="tel:+998888052206" class="social-btn"><i class="fas fa-phone"></i> CALL</a>
         </div>
     </div>
 
