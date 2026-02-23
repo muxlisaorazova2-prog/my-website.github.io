@@ -3,99 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O'razova Muxlisa | Portfolio & AI</title>
+    <title>O'razova Muxlisa | AI Developer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #0f172a;
+            --accent-color: #38bdf8;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
         body {
-            background: #0f2027;
-            background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
+            background-color: var(--bg-color);
+            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+            color: #f1f5f9;
+            line-height: 1.6;
+            padding: 40px 10px;
         }
 
         .container {
-            width: 100%;
-            max-width: 700px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 40px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
             text-align: center;
+            padding: 40px 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            border: 1px solid var(--glass-border);
+            margin-bottom: 30px;
         }
 
         .profile-img {
-            width: 120px; height: 120px;
-            background: white; border-radius: 50%;
+            width: 130px; height: 130px;
+            background: linear-gradient(45deg, #0ea5e9, #818cf8);
+            border-radius: 50%;
             margin: 0 auto 20px;
             display: flex; align-items: center; justify-content: center;
             font-size: 60px;
-            border: 4px solid #00d2ff;
+            border: 4px solid var(--bg-color);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
         }
 
-        h1 { font-size: 28px; margin-bottom: 5px; }
-        .uni-info { color: #00d2ff; font-size: 14px; margin-bottom: 20px; display: block; }
+        h1 { font-size: 32px; letter-spacing: -1px; margin-bottom: 5px; }
+        .subtitle { color: var(--accent-color); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
 
-        .about-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px; border-radius: 20px;
-            margin-bottom: 30px; font-size: 14px; line-height: 1.6;
+        /* General Section Style */
+        .section {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 30px;
+            margin-bottom: 25px;
         }
 
-        /* AI Bo'limi */
-        .ai-section {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 25px; border-radius: 25px;
-            margin-bottom: 30px; border: 1px dashed #00d2ff;
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-color);
         }
 
+        /* Men Haqimda */
+        .about-text { font-size: 15px; color: #cbd5e1; }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 6px 15px;
+            border-radius: 12px;
+            font-size: 13px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* AI Vision Section */
+        .ai-box { text-align: center; }
         #webcam-container {
-            margin: 15px auto;
-            width: 200px; height: 200px;
-            border-radius: 15px; overflow: hidden;
-            border: 3px solid #00d2ff;
+            margin: 20px auto;
+            width: 240px; height: 240px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid var(--accent-color);
+            background: #000;
         }
 
         #label-container div {
-            background: rgba(255, 255, 255, 0.1);
-            margin: 5px 0; padding: 8px; border-radius: 8px; font-size: 13px;
+            background: rgba(255, 255, 255, 0.05);
+            margin: 5px 0; padding: 10px; border-radius: 12px; font-size: 14px;
         }
 
-        .ai-btn {
-            background: #00d2ff; color: #0f2027;
-            border: none; padding: 10px 25px;
-            border-radius: 50px; font-weight: bold;
+        .btn {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            border: none; padding: 14px 28px;
+            border-radius: 15px; font-weight: 700;
             cursor: pointer; transition: 0.3s;
+            width: 100%;
         }
+        .btn:hover { background: #fff; transform: translateY(-2px); }
 
-        /* Ijtimoiy tarmoqlar gridi */
+        /* Social Grid */
         .social-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }.social-link {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            transition: 0.3s;
         }
+        .social-link:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); }
+        .social-link i { font-size: 24px; margin-bottom: 8px; display: block; }
 
-        .social-card {
-            background: white; color: #333;
-            text-decoration: none; padding: 15px 5px;
-            border-radius: 20px; transition: 0.3s;
-            display: flex; flex-direction: column; align-items: center; gap: 8px;
-        }
-
-        .social-card:hover { transform: translateY(-5px); background: #f0f0f0; }
-        .social-card i { font-size: 24px; }
-        .social-card span { font-size: 13px; font-weight: 600; }
-
-        .fa-telegram { color: #0088cc; }
-        .fa-instagram { color: #e1306c; }
-        .fa-phone { color: #25d366; }
-
-        @media (max-width: 500px) {
+        @media (max-width: 600px) {
             .social-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -103,39 +143,65 @@
 <body>
 
     <div class="container">
-        <div class="profile-img">👩‍💻</div>
-        <h1>O'razova Muxlisa</h1>
-        <span class="uni-info">Qarshi DU | Axborot tizimlari va texnologiyalari</span>
+        
+        <header class="hero">
+            <div class="profile-img">🌸</div>
+            <h1>O'razova Muxlisa</h1>
+            <p class="subtitle">AI & Software Engineering Student</p>
+        </header>
 
-        <div class="about-box">
-            <b>Maqsadim:</b> Sun'iy intellekt (AI) texnologiyalari orqali jamiyatga foyda keltirish va IT sohasida kuchli mutaxassis bo'lish.
-        </div><div class="ai-section">
-            <h3 style="font-size: 16px; margin-bottom: 10px;">AI Image Recognition</h3>
-            <button class="ai-btn" type="button" onclick="init()">Kamerani yoqish</button>
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-user-astronaut"></i> Men haqimda</h2>
+            <p class="about-text">
+                Men <b>Qarshi davlat universiteti</b>, Matematika va kompyuter ilmlari fakulteti, "Axborot tizimlari va texnologiyalari" yo'nalishi talabasiman. 
+                Texnologiyalar dunyosiga bo'lgan qiziqishim meni Sun'iy intellekt (AI) sohasini o'rganishga yetakladi. 
+                Hozirda ma'lumotlar bilan ishlash va tasvirlarni tanish modellari ustida tajribalar o'tkazyapman.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-code"></i> Texnik ko'nikmalar</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">TensorFlow JS</span>
+            </div>
+        </section>
+
+        <section class="section ai-box">
+            <h2 class="section-title"><i class="fas fa-brain"></i> AI Vision Proyekti</h2>
+            <p style="font-size: 13px; color: #94a3b8; margin-bottom: 20px;">
+                Bu modul tasvirlarni real vaqt rejimida tanish uchun Google TensorFlow texnologiyasidan foydalanadi.
+            </p>
+            <button class="btn" onclick="init()">Kamerani ishga tushirish</button>
             <div id="webcam-container"></div>
             <div id="label-container"></div>
-        </div>
+        </section>
 
         <div class="social-grid">
-            <a href="https://t.me/muxli_sa9706" target="_blank" class="social-card">
-                <i class="fab fa-telegram"></i>
+            <a href="https://t.me/muxli_sa9706" target="_blank" class="social-link">
+                <i class="fab fa-telegram" style="color: #229ED9;"></i>
                 <span>Telegram</span>
             </a>
-            <a href="https://instagram.com/mux_lisa9706" target="_blank" class="social-card">
-                <i class="fab fa-instagram"></i>
+            <a href="https://instagram.com/mux_lisa9706" target="_blank" class="social-link">
+                <i class="fab fa-instagram" style="color: #E1306C;"></i>
                 <span>Instagram</span>
             </a>
-            <a href="tel:+998888052206" class="social-card">
-                <i class="fas fa-phone"></i>
-                <span>Bog'lanish</span>
+            <a href="tel:+998888052206" class="social-link">
+                <i class="fas fa-phone" style="color: #22C55E;"></i>
+                <span>Telefon</span>
             </a>
         </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-    <script type="text/javascript">
-        // MUHIM: Teachable Machine'dan olgan linkni pastga qo'ying!
+    <script>
+        // O'ZINGIZNING MODEL LINKINGIZNI SHU YERGA QO'YING:
         const URL = "https://teachablemachine.withgoogle.com/models/Sizning_Model_ID/"; 
 
         let model, webcam, labelContainer, maxPredictions;
@@ -146,22 +212,20 @@
 
             try {
                 model = await tmImage.load(modelURL, metadataURL);
-                maxPredictions = model.getTotalClasses();
-
-                const flip = true;
-                webcam = new tmImage.Webcam(200, 200, flip);
+                maxPredictions = model.getTotalClasses();const flip = true;
+                webcam = new tmImage.Webcam(240, 240, flip);
                 await webcam.setup();
                 await webcam.play();
                 window.requestAnimationFrame(loop);
 
                 document.getElementById("webcam-container").appendChild(webcam.canvas);
                 labelContainer = document.getElementById("label-container");
-                labelContainer.innerHTML = ""; // Tozalash
+                labelContainer.innerHTML = "";
                 for (let i = 0; i < maxPredictions; i++) {
                     labelContainer.appendChild(document.createElement("div"));
                 }
             } catch (e) {
-                alert("Modelni yuklashda xatolik! Linkni tekshiring.");
+                alert("Model yuklanmadi. Iltimos, Teachable Machine URL manzilini tekshiring.");
             }
         }
 
@@ -174,8 +238,8 @@
         async function predict() {
             const prediction = await model.predict(webcam.canvas);
             for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction =
-                    prediction[i].className + ": " + (prediction[i].probability * 100).toFixed(0) + "%";
+                const classPrediction = 
+                    "<b>" + prediction[i].className + "</b>: " + (prediction[i].probability * 100).toFixed(0) + "%";
                 labelContainer.childNodes[i].innerHTML = classPrediction;
             }
         }
