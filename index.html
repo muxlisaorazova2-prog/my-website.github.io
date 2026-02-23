@@ -3,246 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O'razova Muxlisa | AI Developer Portfolio</title>
+    <title>O'razova Muxlisa | Portfolio & AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0f172a;
-            --accent-color: #38bdf8;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --bg: #0f172a;
+            --accent: #38bdf8;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
 
         body {
-            background-color: var(--bg-color);
-            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+            background-color: var(--bg);
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
             color: #f1f5f9;
-            line-height: 1.6;
-            padding: 40px 10px;
+            padding: 40px 15px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .container { max-width: 700px; margin: 0 auto; }
 
-        /* Hero Section */
-        .hero {
+        /* Header */
+        .glass-box {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 30px;
+            border: 1px solid var(--border);
+            margin-bottom: 25px;
             text-align: center;
-            padding: 40px 20px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 40px;
-            border: 1px solid var(--glass-border);
-            margin-bottom: 30px;
         }
 
         .profile-img {
-            width: 130px; height: 130px;
-            background: linear-gradient(45deg, #0ea5e9, #818cf8);
+            width: 110px; height: 110px;
+            background: linear-gradient(45deg, var(--accent), #818cf8);
             border-radius: 50%;
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 60px;
-            border: 4px solid var(--bg-color);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            font-size: 50px;
+            border: 4px solid var(--bg);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
         }
 
-        h1 { font-size: 32px; letter-spacing: -1px; margin-bottom: 5px; }
-        .subtitle { color: var(--accent-color); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
+        h1 { font-size: 28px; margin-bottom: 5px; }
+        .tag { color: var(--accent); font-weight: 600; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
 
-        /* General Section Style */
-        .section {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 30px;
-            padding: 30px;
-            margin-bottom: 25px;
-        }
+        /* Sections */
+        h2 { font-size: 18px; margin-bottom: 15px; color: var(--accent); display: flex; align-items: center; gap: 10px; }
+        p { font-size: 14px; color: #cbd5e1; line-height: 1.6; }
 
-        .section-title {
-            font-size: 18px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--accent-color);
-        }
+        .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .skill { background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 5px 12px; border-radius: 10px; font-size: 12px; border: 1px solid rgba(56, 189, 248, 0.2); }
 
-        /* Men Haqimda */
-        .about-text { font-size: 15px; color: #cbd5e1; }
-
-        /* Skills */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-            padding: 6px 15px;
-            border-radius: 12px;
-            font-size: 13px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-
-        /* AI Vision Section */
-        .ai-box { text-align: center; }
+        /* AI Section */
         #webcam-container {
-            margin: 20px auto;
-            width: 240px; height: 240px;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 3px solid var(--accent-color);
-            background: #000;
+            margin: 20px auto; width: 220px; height: 220px;
+            border-radius: 20px; overflow: hidden;
+            border: 3px solid var(--accent); background: #000;
         }
-
         #label-container div {
-            background: rgba(255, 255, 255, 0.05);
-            margin: 5px 0; padding: 10px; border-radius: 12px; font-size: 14px;
+            background: rgba(255, 255, 255, 0.05); margin: 5px 0; padding: 10px; border-radius: 12px; font-size: 13px;
         }
 
+        /* Buttons & Forms */
         .btn {
-            background: var(--accent-color);
-            color: var(--bg-color);
-            border: none; padding: 14px 28px;
-            border-radius: 15px; font-weight: 700;
-            cursor: pointer; transition: 0.3s;
-            width: 100%;
+            background: var(--accent); color: var(--bg);
+            border: none; padding: 14px; border-radius: 15px;
+            font-weight: 700; cursor: pointer; width: 100%; transition: 0.3s;
         }
         .btn:hover { background: #fff; transform: translateY(-2px); }
 
-        /* Social Grid */
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }.social-link {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            color: white;
-            text-align: center;
-            transition: 0.3s;
+        input, textarea {
+            width: 100%; padding: 12px; border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border); color: white; margin-bottom: 15px;
+            outline: none;
         }
-        .social-link:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); }
-        .social-link i { font-size: 24px; margin-bottom: 8px; display: block; }
+        input:focus, textarea:focus { border-color: var(--accent); }
 
-        @media (max-width: 600px) {
-            .social-grid { grid-template-columns: 1fr; }
+        .social-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .social-item {
+            background: var(--glass); padding: 15px; border-radius: 15px;
+            text-decoration: none; color: white; text-align: center; border: 1px solid var(--border);
         }
+
+        @media (max-width: 500px) { .social-links { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <header class="hero">
-            <div class="profile-img">🌸</div>
-            <h1>O'razova Muxlisa</h1>
-            <p class="subtitle">AI & Software Engineering Student</p>
-        </header>
-
-        <section class="section">
-            <h2 class="section-title"><i class="fas fa-user-astronaut"></i> Men haqimda</h2>
-            <p class="about-text">
-                Men <b>Qarshi davlat universiteti</b>, Matematika va kompyuter ilmlari fakulteti, "Axborot tizimlari va texnologiyalari" yo'nalishi talabasiman. 
-                Texnologiyalar dunyosiga bo'lgan qiziqishim meni Sun'iy intellekt (AI) sohasini o'rganishga yetakladi. 
-                Hozirda ma'lumotlar bilan ishlash va tasvirlarni tanish modellari ustida tajribalar o'tkazyapman.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title"><i class="fas fa-code"></i> Texnik ko'nikmalar</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">Machine Learning</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">HTML/CSS</span>
-                <span class="skill-tag">TensorFlow JS</span>
-            </div>
-        </section>
-
-        <section class="section ai-box">
-            <h2 class="section-title"><i class="fas fa-brain"></i> AI Vision Proyekti</h2>
-            <p style="font-size: 13px; color: #94a3b8; margin-bottom: 20px;">
-                Bu modul tasvirlarni real vaqt rejimida tanish uchun Google TensorFlow texnologiyasidan foydalanadi.
-            </p>
-            <button class="btn" onclick="init()">Kamerani ishga tushirish</button>
-            <div id="webcam-container"></div>
-            <div id="label-container"></div>
-        </section>
-
-        <div class="social-grid">
-            <a href="https://t.me/muxli_sa9706" target="_blank" class="social-link">
-                <i class="fab fa-telegram" style="color: #229ED9;"></i>
-                <span>Telegram</span>
-            </a>
-            <a href="https://instagram.com/mux_lisa9706" target="_blank" class="social-link">
-                <i class="fab fa-instagram" style="color: #E1306C;"></i>
-                <span>Instagram</span>
-            </a>
-            <a href="tel:+998888052206" class="social-link">
-                <i class="fas fa-phone" style="color: #22C55E;"></i>
-                <span>Telefon</span>
-            </a>
+<div class="container">
+    <div class="glass-box">
+        <div class="profile-img">🌸</div>
+        <h1>O'razova Muxlisa</h1>
+        <div class="tag">AI Developer & IT Student</div>
+    </div><div class="glass-box" style="text-align: left;">
+        <h2><i class="fas fa-user"></i> Men haqimda</h2>
+        <p>
+            Men Qarshi davlat universiteti, Matematika va kompyuter ilmlari fakulteti talabasiman. 
+            Maqsadim — Sun'iy Intellekt orqali jamiyatdagi muammolarga innovatsion yechimlar topish.
+        </p>
+        <div class="skills">
+            <span class="skill">Python</span><span class="skill">SQL</span>
+            <span class="skill">AI/ML</span><span class="skill">Web Tech</span>
         </div>
-
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-    <script>
-        // O'ZINGIZNING MODEL LINKINGIZNI SHU YERGA QO'YING:
-        const URL = "https://teachablemachine.withgoogle.com/models/Sizning_Model_ID/"; 
+    <div class="glass-box">
+        <h2><i class="fas fa-brain"></i> AI Vision Model</h2>
+        <button class="btn" onclick="init()">Kamerani Yoqish</button>
+        <div id="webcam-container"></div>
+        <div id="label-container"></div>
+    </div>
 
-        let model, webcam, labelContainer, maxPredictions;
+    <div class="glass-box" style="text-align: left;">
+        <h2><i class="fas fa-envelope"></i> Menga xabar qoldiring</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Ismingiz" required>
+            <textarea rows="4" placeholder="Xabaringiz..." required></textarea>
+            <button type="submit" class="btn">Yuborish</button>
+        </form>
+    </div>
 
-        async function init() {
-            const modelURL = URL + "model.json";
-            const metadataURL = URL + "metadata.json";
+    <div class="social-links">
+        <a href="https://t.me/muxli_sa9706" class="social-item"><i class="fab fa-telegram"></i></a>
+        <a href="https://instagram.com/mux_lisa9706" class="social-item"><i class="fab fa-instagram"></i></a>
+        <a href="tel:+998888052206" class="social-item"><i class="fas fa-phone"></i></a>
+    </div>
+</div>
 
-            try {
-                model = await tmImage.load(modelURL, metadataURL);
-                maxPredictions = model.getTotalClasses();const flip = true;
-                webcam = new tmImage.Webcam(240, 240, flip);
-                await webcam.setup();
-                await webcam.play();
-                window.requestAnimationFrame(loop);
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+<script>
+    // MUHIM: O'z linkingizni Teachable Machine'dan olib bu yerga qo'ying
+    const URL = "https://teachablemachine.withgoogle.com/models/Sizning_Model_ID/";
 
-                document.getElementById("webcam-container").appendChild(webcam.canvas);
-                labelContainer = document.getElementById("label-container");
-                labelContainer.innerHTML = "";
-                for (let i = 0; i < maxPredictions; i++) {
-                    labelContainer.appendChild(document.createElement("div"));
-                }
-            } catch (e) {
-                alert("Model yuklanmadi. Iltimos, Teachable Machine URL manzilini tekshiring.");
-            }
+    let model, webcam, labelContainer, maxPredictions;
+
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        const flip = true;
+        webcam = new tmImage.Webcam(220, 220, flip);
+        await webcam.setup();
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        labelContainer.innerHTML = "";
+        for (let i = 0; i < maxPredictions; i++) {
+            labelContainer.appendChild(document.createElement("div"));
         }
+    }
 
-        async function loop() {
-            webcam.update();
-            await predict();
-            window.requestAnimationFrame(loop);
-        }
+    async function loop() {
+        webcam.update();
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
 
-        async function predict() {
-            const prediction = await model.predict(webcam.canvas);
-            for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction = 
-                    "<b>" + prediction[i].className + "</b>: " + (prediction[i].probability * 100).toFixed(0) + "%";
-                labelContainer.childNodes[i].innerHTML = classPrediction;
-            }
+    async function predict() {
+        const prediction = await model.predict(webcam.canvas);
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction = prediction[i].className + ": " + (prediction[i].probability * 100).toFixed(0) + "%";
+            labelContainer.childNodes[i].innerHTML = classPrediction;
         }
-    </script>
+    }
+
+    // Form yuborish simulatsiyasi
+    document.getElementById('contact-form').onsubmit = function(e) {
+        e.preventDefault();
+        alert("Rahmat, Muxlisa! Xabaringiz qabul qilindi.");
+        this.reset();
+    };
+</script>
 </body>
 </html>
