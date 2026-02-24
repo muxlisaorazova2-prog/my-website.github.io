@@ -1,70 +1,85 @@
-<nav class="navbar">
-    <div class="nav-links">
-        <a href="#home">Bosh sahifa</a>
-        <a href="#about">Men haqimda</a>
-        <a href="#projects">AI Loyihalar</a>
-        <a href="#skills">Bilimlar</a>
-        <a href="#contact">Aloqa</a>
-    </div>
-</nav>
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'razova Muxlisa | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --accent: #38bdf8; --bg: #0f172a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: var(--bg); color: white; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .card { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 25px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .profile-img { width: 100px; height: 100px; background: var(--accent); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 50px; }
+        h1 { text-align: center; font-size: 24px; margin-bottom: 5px; }
+        .tag { text-align: center; color: var(--accent); font-size: 13px; display: block; margin-bottom: 20px; }
+        #webcam-container { margin: 15px auto; width: 200px; height: 200px; border: 3px solid var(--accent); border-radius: 15px; overflow: hidden; }
+        .btn { background: var(--accent); color: var(--bg); border: none; padding: 12px; width: 100%; border-radius: 12px; font-weight: 700; cursor: pointer; }
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 10px; border: none; background: rgba(255,255,255,0.1); color: white; }
+        .socials { display: flex; justify-content: space-around; margin-top: 20px; }
+        .socials a { color: white; font-size: 24px; text-decoration: none; }
+    </style>
+</head>
+<body>
 
-<section id="home" class="section hero">
-    <div class="profile-card">
-        <img src="profil_rasmingiz.jpg" alt="Sitora" class="profile-img">
-        <h1>Boymirzayeva Sitora Otabekovna</h1>
-        <p class="subtitle">IT Talaba & Kreativ Dasturchi</p>
+<div class="container">
+    <div class="card">
+        <div class="profile-img">👩‍💻</div>
+        <h1>O'razova Muxlisa</h1>
+        <span class="tag">Qarshi DU | Axborot tizimlari talabasi</span>
+        <p style="font-size: 14px; text-align: center; color: #94a3b8;">
+            Men sun'iy intellekt va ma'lumotlar tahlili yo'nalishida o'z loyihalarimni yaratishga qiziqaman.
+        </p>
     </div>
-</section>
 
-<section id="about" class="section">
-    <div class="container">
-        <h2 class="title">MEN HAQIMDA</h2>
-        <div class="info-grid">
-            <div class="info-item">📍 <b>Manzil:</b> Qashqadaryo, Qarshi shahri</div>
-            <div class="info-item">🎓 <b>O'qish:</b> Qarshi Davlat Universiteti</div>
-            <div class="info-item">🎯 <b>Maqsad:</b> Senior Full-stack dasturchi bo'lish</div>
-        </div>
+    <div class="card">
+        <h3 style="margin-bottom:15px; color: var(--accent);">AI Image Recognition</h3>
+        <button class="btn" onclick="init()">Kamerani ishga tushirish</button>
+        <div id="webcam-container"></div>
+        <div id="label-container"></div>
     </div>
-</section>
 
-<section id="projects" class="section alt-bg">
-    <div class="container">
-        <h2 class="title">MENING AI LOYIHAM</h2>
-        <div class="project-grid">
-            <div class="card">
-                <h3>Kitoblar dataseti</h3>
-                <p>Ushbu datasetda kitoblar rasmi turli ko'rinishda berilgan.</p>
-                <button class="btn">Loyihani ko'rish</button>
-            </div>
-            <div class="card">
-                <h3>Futbol va Tennis AI</h3>
-                <p>Kamera orqali to'plarni aniqlaydigan sun'iy intellekt.</p>
-                <button class="btn">Loyihani ko'rish</button>
-            </div>
-        </div>
+    <div class="card">
+        <h3 style="margin-bottom:15px; color: var(--accent);">Menga xabar qoldiring</h3>
+        <input type="text" placeholder="Ismingiz">
+        <textarea rows="3" placeholder="Xabaringiz..."></textarea>
+        <button class="btn" onclick="alert('Xabar yuborildi!')">Yuborish</button>
     </div>
-</section>
 
-<section id="skills" class="section">
-    <div class="container">
-        <h2 class="title">BILIMLAR DARAJASI</h2>
-        <div class="skill-bar">
-            <span>HTML / CSS / JS (95%)</span>
-            <div class="bar"><div class="fill" style="width: 95%;"></div></div>
-        </div>
-        <div class="skill-bar">
-            <span>AI & Data Science (85%)</span>
-            <div class="bar"><div class="fill" style="width: 85%;"></div></div>
-        </div>
+    <div class="socials">
+        <a href="https://t.me/muxli_sa9706"><i class="fab fa-telegram"></i></a>
+        <a href="https://instagram.com/mux_lisa9706"><i class="fab fa-instagram"></i></a>
+        <a href="tel:+998888052206"><i class="fas fa-phone"></i></a>
     </div>
-</section>
+</div>
 
-<section id="contact" class="section alt-bg">
-    <div class="container">
-        <h2 class="title">ALOQA VA TARMOQLAR</h2>
-        <div class="social-btns">
-            <a href="#" class="social-link tg">Telegram</a>
-            <a href="#" class="social-link inst">Instagram</a>
-        </div>
-    </div>
-</section>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+<script>
+    // NUSXALAB OLGAN LINKINGIZNI SHU YERGA QO'YING:
+    const URL = "https://teachablemachine.withgoogle.com/models/Sizning_Linkingiz/"; 
+
+    let model, webcam, labelContainer, maxPredictions;
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+        webcam = new tmImage.Webcam(200, 200, true);
+        await webcam.setup();await webcam.play();
+        window.requestAnimationFrame(loop);
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { labelContainer.appendChild(document.createElement("div")); }
+    }
+    async function loop() { webcam.update(); await predict(); window.requestAnimationFrame(loop); }
+    async function predict() {
+        const prediction = await model.predict(webcam.canvas);
+        for (let i = 0; i < maxPredictions; i++) {
+            labelContainer.childNodes[i].innerHTML = prediction[i].className + ": " + (prediction[i].probability * 100).toFixed(0) + "%";
+        }
+    }
+</script>
+</body>
+</html>
