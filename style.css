@@ -1,122 +1,32 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* Umumiy sozlamalar */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background-color: #f4f7f6; scroll-behavior: smooth; }
 
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.alt-bg { background-color: #e3efff; border-radius: 50px 50px 0 0; }
 
-/* Body */
-body {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: #333;
-    min-height: 100vh;
-}
+/* Navbar */
+.navbar { position: fixed; top: 0; width: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); padding: 15px; z-index: 1000; text-align: center; }
+.nav-links a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: #2575fc; }
 
-/* Container */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
-}
+/* Kartochkalar */
+.card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; margin: 15px; text-align: center; flex: 1; }
+.card:hover { transform: translateY(-10px); }
 
-/* Header */
-header {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
+.project-grid { display: flex; flex-wrap: wrap; gap: 20px; width: 100%; }
 
-header h1 {
-    color: #667eea;
-    font-size: 36px;
-    margin-bottom: 10px;
-}
+/* Progress Bar */
+.skill-bar { width: 100%; margin-bottom: 20px; }
+.bar { height: 10px; background: #ddd; border-radius: 5px; margin-top: 5px; }
+.fill { height: 100%; background: linear-gradient(90deg, #6a11cb, #2575fc); border-radius: 5px; }
 
-header p {
-    color: #555;
-}
+/* Tugmalar */
+.btn { background: #2575fc; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; margin-top: 15px; }
+.social-link { padding: 15px 30px; border-radius: 10px; color: white; text-decoration: none; margin: 10px; display: inline-block; }
+.tg { background: #0088cc; }
+.inst { background: #e1306c; }
 
-/* Navigation */
-nav {
-    margin-top: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: white;
-    background: #667eea;
-    padding: 10px 18px;
-    margin: 5px;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    background: #764ba2;
-}
-
-/* Section */
-section {
-    background: white;
-    margin-top: 30px;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-section h2 {
-    color: #764ba2;
-    margin-bottom: 15px;
-}
-
-/* Cards */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 25px;
-    border-radius: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-
-/* Button */
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 25px;
-    background: white;
-    color: #667eea;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #f1f1f1;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 40px;
-    color: white;
-    opacity: 0.8;
-    font-size: 14px;
-}
+/* Profil rasmi */
+.profile-img { width: 150px; height: 150px; border-radius: 50%; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
