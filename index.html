@@ -1,212 +1,100 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>O'razova Muxlisa | Portfolio</title>
-
-    <!-- Font Awesome (saqlanmoqda) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root{
-            --bg: #f1f5f9;
-            --card: #ffffff;
-            --muted: #64748b;
-            --text: #0f172a;
-            --accent: #0ea5e9; /* sky-500 */
-            --accent-2: #0284c7;
-            --glass: rgba(255,255,255,0.6);
-            --radius: 16px;
-            --max-w: 960px;
+            --bg:#f1f5f9; --card:#ffffff; --muted:#64748b; --text:#0f172a;
+            --accent:#0ea5e9; --accent-2:#0284c7; --radius:14px; --max-w:980px;
         }
-
         *{box-sizing:border-box;margin:0;padding:0}
-        html,body{height:100%}
         body{
-            font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
-            background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 50%);
-            color:var(--text);
-            -webkit-font-smoothing:antialiased;
-            -moz-osx-font-smoothing:grayscale;
-            padding:28px;
-            display:flex;
-            justify-content:center;
+            font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+            background: linear-gradient(180deg,#eef2ff 0%,var(--bg) 50%);
+            color:var(--text); padding:28px; display:flex; justify-content:center;
         }
-
-        .wrapper{
-            width:100%;
-            max-width:var(--max-w);
-            display:grid;
-            grid-template-columns: 1fr 360px;
-            gap:22px;
-            align-items:start;
-        }
-
-        /* Small screens: single column */
-        @media (max-width:880px){
-            .wrapper{grid-template-columns: 1fr; padding:0 12px;}
-        }
-
-        /* Left column (main) */
-        .main-column{
-            display:flex;
-            flex-direction:column;
-            gap:20px;
-        }
-
-        /* Right column (sidebar) */
-        .sidebar{
-            display:flex;
-            flex-direction:column;
-            gap:20px;
-        }
-
-        /* Card base */
-        .card{
-            background: linear-gradient(180deg, rgba(255,255,255,0.9), var(--card));
-            border-radius:var(--radius);
-            padding:20px;
-            border:1px solid rgba(15,23,42,0.04);
-            box-shadow: 0 6px 20px rgba(2,6,23,0.06);
-        }
-
-        /* Profile card */
-        .profile{
-            display:flex;
-            gap:18px;
-            align-items:center;
-        }
-        .avatar{
-            width:108px;height:108px;border-radius:18px;
-            background:linear-gradient(135deg,var(--accent),var(--accent-2));
-            display:flex;align-items:center;justify-content:center;
-            font-size:42px;color:#fff;border:4px solid rgba(255,255,255,0.2);
-            box-shadow: 0 8px 30px rgba(2,132,199,0.18);
-            flex-shrink:0;
-        }
-        .profile h1{
-            font-size:20px;margin-bottom:6px;color:var(--text);
-        }
-        .role{
-            display:inline-block;margin-bottom:8px;padding:6px 10px;
-            background:rgba(14,165,233,0.08);color:var(--accent);
-            font-weight:700;font-size:12px;border-radius:999px;letter-spacing:0.6px;
-        }
-        .bio{
-            color:var(--muted);line-height:1.6;font-size:14px;text-align:justify;
-        }
-
-        .profile-actions{
-            margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;
-        }
-        .btn{
-            display:inline-flex;align-items:center;gap:10px;
-            padding:10px 14px;border-radius:12px;border:none;
-            background:var(--accent);color:white;font-weight:700;cursor:pointer;
-            text-decoration:none;font-size:14px;box-shadow: 0 6px 18px rgba(14,165,233,0.12);
-            transition:transform .18s ease, box-shadow .18s ease;
-        }
+        .wrapper{width:100%;max-width:var(--max-w);display:grid;grid-template-columns:1fr 360px;gap:22px;}
+        @media (max-width:880px){.wrapper{grid-template-columns:1fr;padding:0 12px}}
+        .card{background:linear-gradient(180deg,rgba(255,255,255,0.95),var(--card));border-radius:var(--radius);
+            padding:18px;border:1px solid rgba(15,23,42,0.04);box-shadow:0 6px 20px rgba(2,6,23,0.06)}
+        .profile{display:flex;gap:16px;align-items:center}
+        .avatar{width:108px;height:108px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+            display:flex;align-items:center;justify-content:center;color:#fff;font-size:40px;border:4px solid rgba(255,255,255,0.18);
+            box-shadow:0 8px 30px rgba(2,132,199,0.18);flex-shrink:0}
+        h1{font-size:20px}
+        .role{display:inline-block;margin-top:6px;padding:6px 10px;background:rgba(14,165,233,0.08);color:var(--accent);
+            font-weight:700;font-size:12px;border-radius:999px;letter-spacing:0.6px}
+        .bio{color:var(--muted);line-height:1.6;font-size:14px;margin-top:10px;text-align:justify}
+        .profile-actions{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+        .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:none;
+            background:var(--accent);color:white;font-weight:700;cursor:pointer;text-decoration:none;font-size:14px;
+            box-shadow:0 6px 18px rgba(14,165,233,0.12);transition:transform .18s}
         .btn:active{transform:translateY(1px)}
-        .btn.outline{
-            background:transparent;color:var(--accent);border:2px solid rgba(14,165,233,0.12);
-            box-shadow:none;font-weight:700;
-        }
-
-        /* Articles list */
-        .articles .article{
-            display:flex;flex-direction:column;gap:8px;padding:14px;border-radius:12px;
-            background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(2,6,23,0.04);
-        }
+        .btn.outline{background:transparent;color:var(--accent);border:2px solid rgba(14,165,233,0.12);box-shadow:none}
+        .articles .article{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);
+            border:1px solid rgba(2,6,23,0.04)}
         .article-title{font-weight:800;font-size:15px;color:var(--text)}
         .article-meta{font-size:13px;color:var(--muted)}
-        .article-actions{margin-top:8px;display:flex;gap:8px}
-
-        /* Skills / progress */
-        .skills .skill{
-            margin-bottom:12px;
-        }
+        .skills .skill{margin-bottom:12px}
         .skill-row{display:flex;justify-content:space-between;font-weight:600;color:var(--text);font-size:13px;margin-bottom:6px}
-        .progress{
-            height:10px;background:#e6eef7;border-radius:999px;overflow:hidden;
-        }
-        .progress > span{
-            display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));
-            border-radius:999px;
-        }
-
-        /* AI Camera card */
-        .ai{
-            text-align:center;
-        }
-        .ai-viewport{
-            width:100%;
-            max-width:320px;
-            height:220px;
-            margin:14px auto 8px;
-            border-radius:12px;
-            overflow:hidden;
-            background:#000;
-            border:4px solid rgba(2,132,199,0.12);
-            display:flex;align-items:center;justify-content:center;
-        }
+        .progress{height:10px;background:#e6eef7;border-radius:999px;overflow:hidden}
+        .progress>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:999px}
+        .ai{ text-align:center }
+        .ai-viewport{width:100%;max-width:320px;height:220px;margin:14px auto;border-radius:12px;overflow:hidden;background:#000;
+            border:4px solid rgba(2,132,199,0.12);display:flex;align-items:center;justify-content:center}
         .ai-status{font-weight:700;color:var(--accent);margin-bottom:8px}
         .ai-controls{display:flex;gap:10px;justify-content:center}
-        .small-btn{
-            padding:8px 12px;border-radius:10px;border:none;background:#fff;color:var(--accent-2);
-            box-shadow:0 6px 16px rgba(2,6,23,0.06);font-weight:700;cursor:pointer;
-        }
-
-        /* Contact card */
+        .small-btn{padding:8px 12px;border-radius:10px;border:none;background:#fff;color:var(--accent-2);box-shadow:0 6px 16px rgba(2,6,23,0.06);
+            font-weight:700;cursor:pointer}
         .socials{display:flex;gap:12px;justify-content:center;align-items:center;margin-top:10px}
-        .socials a{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;
-            color:var(--muted);background:linear-gradient(180deg,rgba(255,255,255,0.85),rgba(250,250,250,0.85));
-            border:1px solid rgba(2,6,23,0.04);text-decoration:none;transition:all .18s ease;}
+        .socials a{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;color:var(--muted);
+            background:linear-gradient(180deg,rgba(255,255,255,0.85),rgba(250,250,250,0.85));border:1px solid rgba(2,6,23,0.04);text-decoration:none}
         .socials a:hover{transform:translateY(-6px);color:var(--accent-2);box-shadow:0 10px 30px rgba(2,132,199,0.12)}
-
         footer{font-size:12px;color:rgba(15,23,42,0.5);text-align:center;margin-top:10px}
+        .note{font-size:13px;color:var(--muted);margin-top:8px}
     </style>
 </head>
 <body>
     <div class="wrapper">
-
         <div class="main-column">
-            <!-- Profile card -->
             <div class="card profile">
                 <div class="avatar">👩‍🔬</div>
                 <div style="flex:1">
-                    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start">
                         <div>
                             <h1>O'razova Muxlisa Qayum qizi</h1>
                             <div class="role">AI Developer & Data Analyst</div>
                         </div>
-                        <div style="text-align:right">
-                            <div style="font-size:12px;color:var(--muted)">© 2026</div>
-                        </div>
+                        <div style="text-align:right;color:var(--muted)">© 2026</div>
                     </div>
 
-                    <p class="bio" style="margin-top:10px">
+                    <p class="bio">
                         Axborot tizimlari va ma'lumotlar tahlili yo'nalishida ilmiy tadqiqotlar olib boruvchi mutaxassisman.
                         Hozirda <strong>Big Data</strong> texnologiyalari va <strong>Sun'iy intellektni</strong> amaliy jarayonlarga,
                         xususan qishloq xo'jaligi va raqamli iqtisodiyotga tatbiq etish ustida ishlayapman.
                     </p>
 
                     <div class="profile-actions">
-                        <a class="btn" href="Maqola ResOAK-2025 ajratilgani.pdf" target="_blank"><i class="fa fa-file-pdf"></i> PDFni o'qish</a>
+                        <!-- Agar serverda fayl nomi bo'shliq bilan bo'lsa, yuklangan faylni qayta nomlashni tavsiya qilaman.
+                             Quyida safe nom bilan link berildi; o'zingizning haqiqiy fayl nomingiz bo'lsa, uni shu yerda o'zgartiring. -->
+                        <a class="btn" href="Maqola_ResOAK-2025_ajratilgani.pdf" target="_blank"><i class="fa fa-file-pdf"></i> PDFni o'qish</a>
                         <a class="btn outline" href="https://journalss.org/index.php/mod/article/view/9466/9101" target="_blank"><i class="fa fa-link"></i> Jurnal</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Articles -->
             <div class="card articles">
                 <h3 style="margin-bottom:12px;font-size:16px"><i class="fa fa-newspaper" style="margin-right:8px;color:var(--accent)"></i> Ilmiy Maqolalarim</h3>
 
                 <div class="article">
                     <div class="article-title">Zamonaviy usullarning Big Dataga tadbig'i</div>
                     <div class="article-meta">II Respublika ilmiy-amaliy anjumani (2025). Bug'doy seleksiyasi ma'lumotlarini intellektual tahlil qilish.</div>
-                    <div class="article-actions">
-                        <a class="btn outline" href="Maqola ResOAK-2025 ajratilgani.pdf" target="_blank">To'liq PDFni o'qish</a>
+                    <div style="margin-top:8px">
+                        <a class="btn outline" href="Maqola_ResOAK-2025_ajratilgani.pdf" target="_blank">To'liq PDFni o'qish</a>
                     </div>
                 </div>
 
@@ -215,52 +103,46 @@
                 <div class="article">
                     <div class="article-title">Turizm rivojida Elektron Raqamli Imzoning o'rni</div>
                     <div class="article-meta">Modern Education jurnali (2025). Qashqadaryo viloyati turizm misolida.</div>
-                    <div class="article-actions">
+                    <div style="margin-top:8px">
                         <a class="btn outline" href="https://journalss.org/index.php/mod/article/view/9466/9101" target="_blank">Saytda ko'rish →</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Extra spacer or future content -->
-            <div class="card" style="display:none">
-                <!-- reserved -->
-            </div>
         </div>
 
         <div class="sidebar">
-            <!-- AI Scanner -->
             <div class="card ai">
                 <h3 style="font-size:16px"><i class="fa fa-camera" style="color:var(--accent);margin-right:8px"></i> Swan & Stork AI Scanner</h3>
+
                 <div id="webcam-container" class="ai-viewport" aria-hidden="true">
-                    <!-- webcam canvas appended here -->
+                    <!-- webcam canvas will be appended here -->
+                    <div style="color:#fff;font-size:13px;padding:8px;text-align:center">Kamera oynasi</div>
                 </div>
+
                 <div id="label-container" class="ai-status">Kamera kutilyapti...</div>
 
                 <div class="ai-controls">
-                    <button id="start-btn" class="small-btn" onclick="initAI()">Kamerani yoqish</button>
-                    <button id="stop-btn" class="small-btn" style="display:none" onclick="stopAI()">To'xtatish</button>
+                    <button id="start-btn" class="small-btn">Kamerani yoqish</button>
+                    <button id="stop-btn" class="small-btn" style="display:none">To'xtatish</button>
                 </div>
-                <p style="margin-top:12px;font-size:13px;color:var(--muted)">
-                    Model: Teachable Machine. Iltimos, brauzeringizda kamera ruxsatini tasdiqlang.
-                </p>
+
+                <div class="note">Model: Teachable Machine. Agar kamera ishlamasa — sahifani HTTPS orqali yoki localhost’da oching va brauzer ruxsatini tasdiqlang.</div>
             </div>
 
-            <!-- Skills -->
             <div class="card skills">
                 <h3 style="font-size:16px"><i class="fa fa-chart-bar" style="color:var(--accent);margin-right:8px"></i> Bilimlar Darajasi</h3>
 
                 <div class="skill">
                     <div class="skill-row"><span>AI & Machine Learning</span><span>95%</span></div>
-                    <div class="progress" aria-hidden="true"><span style="width:95%"></span></div>
+                    <div class="progress"><span style="width:95%"></span></div>
                 </div>
 
                 <div class="skill">
                     <div class="skill-row"><span>Big Data Analytics</span><span>88%</span></div>
-                    <div class="progress" aria-hidden="true"><span style="width:88%"></span></div>
+                    <div class="progress"><span style="width:88%"></span></div>
                 </div>
             </div>
 
-            <!-- Contact -->
             <div class="card">
                 <h3 style="font-size:16px"><i class="fa fa-link" style="color:var(--accent);margin-right:8px"></i> Bog'lanish</h3>
                 <div class="socials">
@@ -271,46 +153,55 @@
                 <footer>© 2026 Muxlisa Qayum qizi</footer>
             </div>
         </div>
-
     </div>
 
-    <!-- External libs (saqlanmoqda) -->
+    <!-- External libraries (saqlangan) -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 
     <script>
-        // AI model constants - saqlangan
+        // MODEL URL - saqlangan
         const MODEL_URL = "https://teachablemachine.withgoogle.com/models/SHYWKBmfo/";
-        let model, webcam, labelContainer, maxPredictions;
+        let model = null;
+        let webcam = null;
+        let maxPredictions = 0;
+        const startBtn = document.getElementById('start-btn');
+        const stopBtn = document.getElementById('stop-btn');
+        const webcamContainer = document.getElementById('webcam-container');
+        const labelContainer = document.getElementById('label-container');
 
+        // Safety wrapper: async init called by click
         async function initAI(){
-            const startBtn = document.getElementById('start-btn');
-            const stopBtn = document.getElementById('stop-btn');
             startBtn.disabled = true;
             startBtn.textContent = "Yuklanmoqda...";
+            console.log("Model yuklanmoqda...");
 
             try {
-                // yuklash
                 model = await tmImage.load(MODEL_URL + "model.json", MODEL_URL + "metadata.json");
                 maxPredictions = model.getTotalClasses();
+                console.log("Model yuklandi. Sinflar:", maxPredictions);
 
-                webcam = new tmImage.Webcam(320, 220, true); // width, height, flip
-                await webcam.setup();
+                // Create webcam with reasonable size
+                webcam = new tmImage.Webcam(320, 220, true);
+
+                // Ask for permission and setup
+                await webcam.setup(); // request access
                 await webcam.play();
 
-                // clear the container then append
-                const container = document.getElementById('webcam-container');
-                container.innerHTML = '';
-                container.appendChild(webcam.canvas);
-                labelContainer = document.getElementById('label-container');
-
-                startBtn.style.display = 'none';
-                stopBtn.style.display = 'inline-block';
+                // Clear container and append canvas
+                webcamContainer.innerHTML = '';
+                webcamContainer.appendChild(webcam.canvas);
                 labelContainer.textContent = "Tahlil ishlamoqda...";
 
+                // Show/Hide buttons
+                startBtn.style.display = 'none';
+                stopBtn.style.display = 'inline-block';
+                stopBtn.disabled = false;
+
+                // Start loop
                 window.requestAnimationFrame(loop);
             } catch (err) {
-                console.error(err);
+                console.error("InitAI xatolik:", err);
                 alert("Kamera yoki model yuklanishda xato: " + (err.message || err));
                 startBtn.disabled = false;
                 startBtn.textContent = "Qayta urinish";
@@ -318,9 +209,17 @@
         }
 
         async function loop(){
-            if (!webcam) return;
-            webcam.update();
-            await predict();
+            if (!webcam || !model) return;
+            try {
+                webcam.update();
+                await predict();
+            } catch (err) {
+                console.error("Loop ichida xato:", err);
+                // Agar xato yuz bersa, to'xtatish bilan tiklash imkonini beramiz
+                stopAI();
+                labelContainer.textContent = "Xato yuz berdi — qayta urinib ko'ring";
+                return;
+            }
             window.requestAnimationFrame(loop);
         }
 
@@ -335,27 +234,46 @@
                     bestMatch = prediction[i].className;
                 }
             }
-            const label = document.getElementById("label-container");
-            label.textContent = bestMatch ? `${bestMatch} (${(highProb*100).toFixed(0)}%)` : "Ob'ekt topilmadi";
+            if (bestMatch){
+                labelContainer.textContent = `${bestMatch} (${(highProb * 100).toFixed(0)}%)`;
+            } else {
+                labelContainer.textContent = "Ob'ekt topilmadi";
+            }
         }
 
         function stopAI(){
-            const startBtn = document.getElementById('start-btn');
-            const stopBtn = document.getElementById('stop-btn');
-            if (webcam){
-                try {
+            try {
+                if (webcam){
                     webcam.stop();
-                } catch(e){}
-                webcam = null;
+                    webcam = null;
+                }
+            } catch (e) {
+                console.warn("Webcam stop xatosi:", e);
             }
-            const container = document.getElementById('webcam-container');
-            container.innerHTML = '';
-            document.getElementById('label-container').textContent = "Kamera o‘chirildi";
+            // Remove canvas safely
+            webcamContainer.innerHTML = '<div style="color:#000;font-size:13px;padding:8px;text-align:center">Kamera o‘chirildi</div>';
+            labelContainer.textContent = "Kamera o‘chirildi";
             stopBtn.style.display = 'none';
             startBtn.style.display = 'inline-block';
             startBtn.disabled = false;
             startBtn.textContent = "Kamerani yoqish";
+            console.log("Kamera to'xtatildi");
         }
+
+        // Attach button handlers
+        startBtn.addEventListener('click', async () => {
+            // Ensure HTTPS or localhost
+            const isSecure = location.protocol === 'https:' || location.hostname === 'localhost';
+            if (!isSecure) {
+                const ok = confirm("Kamera faqat HTTPS yoki localhost'da ishlaydi. Siz hozir " + location.protocol + "// rejimidasiz. Davom etmoqchimisiz?");
+                if (!ok) return;
+            }
+            await initAI();
+        });
+        stopBtn.addEventListener('click', stopAI);
+
+        // Helpful: print console tips for debugging network/model errors
+        console.log("Sahifa yuklandi. Agar model yuklanmasa, F12 → Console dagi xatoni nusxa qilib yuboring.");
     </script>
 </body>
 </html>
