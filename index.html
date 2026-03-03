@@ -49,8 +49,10 @@
             box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
             object-fit: cover; background: rgba(255,255,255,0.1);
         }
-        h1 { font-size: 32px; font-weight: 800; background: linear-gradient(to right, #00d2ff, #3a7bd5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .subtitle { color: #aaa; font-size: 17px; margin-bottom: 10px; display: block; }
+        h1 { font-size: 32px; font-weight: 800; background: linear-gradient(to right, #00d2ff, #3a7bd5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
+        .info-list { text-align: left; margin: 20px 0; font-size: 15px; color: #ddd; }
+        .info-list i { color: var(--primary); width: 25px; margin-bottom: 10px; }
+        .objective { font-style: italic; color: #00d2ff; font-size: 14px; margin-top: 15px; border-top: 1px solid var(--border); padding-top: 15px; }
 
         /* 2. BILIMLAR */
         .skill-item { margin-bottom: 15px; }
@@ -65,15 +67,12 @@
             align-items: center; transition: 0.3s; text-decoration: none; color: white; margin-bottom: 12px;
         }
         .article-card:hover { background: rgba(0, 210, 255, 0.1); border-color: var(--primary); padding-left: 25px; }
-        .article-info h4 { color: var(--primary); font-size: 16px; margin-bottom: 4px; }
-        .article-info p { font-size: 13px; color: #ccc; }
 
         /* 4. SERTIFIKAT */
         .cert-box { border-radius: 20px; overflow: hidden; border: 1px solid var(--border); cursor: pointer; transition: 0.3s; max-width: 300px; margin: 15px auto; }
         .cert-box img { width: 100%; display: block; }
-        .cert-box:hover { border-color: var(--primary); transform: scale(1.03); }
 
-        /* 5. MENING DUNYOYIM (GALEREYA) */
+        /* 5. MENING DUNYOYIM */
         .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px; }
         .gallery-item { border-radius: 15px; overflow: hidden; height: 180px; border: 1px solid var(--border); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
@@ -88,11 +87,7 @@
 
         /* 7. ALOQA */
         .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
-        .social-links a { 
-            width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; 
-            background: var(--glass); border: 1px solid var(--border); border-radius: 50%; 
-            color: white; font-size: 20px; text-decoration: none; transition: 0.3s; 
-        }
+        .social-links a { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: var(--glass); border: 1px solid var(--border); border-radius: 50%; color: white; font-size: 20px; text-decoration: none; transition: 0.3s; }
         .social-links a:hover { background: var(--primary); color: #000; transform: translateY(-5px); }
 
         @media (max-width: 600px) { .gallery-grid { grid-template-columns: 1fr; } }
@@ -104,22 +99,33 @@
     <div class="card profile-header">
         <img src="profil.jpg" alt="Muxlisa" class="avatar" onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Muxlisa'">
         <h1>O'razova Muxlisa</h1>
-        <span class="subtitle">Axborot Tizimlari Talabasi | Big Data Tadqiqotchisi</span>
+        
+        <div class="info-list">
+            <p><i class="fas fa-map-marker-alt"></i> <b>Manzil:</b> Qashqadaryo viloyati, Yakkabog' tumani, Navzo'r qishlog'i</p>
+            <p><i class="fas fa-university"></i> <b>O'qish joyi:</b> Qarshi Davlat Universiteti</p>
+            <p><i class="fas fa-book"></i> <b>Fakultet:</b> Matematika va kompyuter ilmlari</p>
+            <p><i class="fas fa-code-branch"></i> <b>Yo'nalish:</b> Axborot Tizimlari va texnologiyalari</p>
+            <p><i class="fas fa-user-graduate"></i> <b>Kurs:</b> 2-kurs, 024-34 guruh</p>
+        </div>
+
+        <p class="objective">
+            <b>Maqsadim:</b> Zamonaviy Axborot texnologiyalari va Sun'iy intellekt sohasida chuqur bilim olib, yurtimiz raqamli iqtisodiyotini rivojlantirishga o'z hissamni qo'shish hamda Big Data tahlili bo'yicha yetuk mutaxassis bo'lib yetishish.
+        </p>
     </div>
 
     <div class="card">
         <h2 style="margin-bottom: 20px;"><i class="fas fa-graduation-cap"></i> Bilimlar darajasi</h2>
         <div class="skill-item">
-            <div class="skill-info"><span>Big Data & Data Mining</span><span>85%</span></div>
+            <div class="skill-info"><span>Big Data Tahlili</span><span>85%</span></div>
             <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
         </div>
         <div class="skill-item">
-            <div class="skill-info"><span>Python & AI</span><span>80%</span></div>
+            <div class="skill-info"><span>Axborot Tizimlari</span><span>80%</span></div>
             <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
         </div>
         <div class="skill-item">
-            <div class="skill-info"><span>Raqamli Iqtisodiyot</span><span>90%</span></div>
-            <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            <div class="skill-info"><span>Matematik Modellashtirish</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
         </div>
     </div>
 
@@ -131,8 +137,7 @@
                 <p>Respublika ilmiy-amaliy anjumani (2025).</p>
             </div>
             <i class="fab fa-google-drive"></i>
-        </a>
-        <a href="https://journalss.org/index.php/mod/article/view/9466" target="_blank" class="article-card">
+        </a><a href="https://journalss.org/index.php/mod/article/view/9466" target="_blank" class="article-card">
             <div class="article-info">
                 <h4>Qashqadaryo turizmida ERI o'rni</h4>
                 <p>Elektron raqamli imzo va turizm transformatsiyasi.</p>
@@ -146,7 +151,9 @@
         <div class="cert-box" onclick="window.open('sertifikat1.jpg', '_blank')">
             <img src="sertifikat1.jpg" alt="Sertifikat" onerror="this.src='https://via.placeholder.com/300x200?text=Sertifikat+Rasmi'">
         </div>
-    </div><div class="card">
+    </div>
+
+    <div class="card">
         <h2 style="margin-bottom: 20px;"><i class="fas fa-camera-retro"></i> Mening dunyoyim</h2>
         <div class="gallery-grid">
             <div class="gallery-item"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500"></div>
@@ -158,17 +165,16 @@
 
     <div class="card" style="text-align: center;">
         <h2><i class="fas fa-seedling"></i> Gul aniqlovchi AI</h2>
-        <p style="font-size: 13px; color: #888; margin-top: 5px;">Lola yoki Atirgulni kameraga ko'rsating</p>
         <div id="webcam-container"><i class="fas fa-video-slash" style="font-size: 40px; color: #333;"></i></div>
         <button class="btn" onclick="init()">Kamerani Yoqish</button>
-        <div id="label-container" style="margin-top: 15px; font-weight: 600; font-size: 18px; color: var(--primary);"></div>
+        <div id="label-container" style="margin-top: 15px; font-weight: 600; color: var(--primary);"></div>
     </div>
 
     <div class="card">
         <h2><i class="fas fa-coins"></i> Kredit Kalkulyatori (17%)</h2>
         <input type="number" id="moneyInput" placeholder="Summani kiriting (so'm)">
         <button class="btn" onclick="calculateLoan()">Bank foydasini hisoblash</button>
-        <div id="loanResult" style="margin-top: 20px; font-weight: 800; color: var(--primary); text-align: center; font-size: 18px;"></div>
+        <div id="loanResult" style="margin-top: 20px; font-weight: 800; color: var(--primary); text-align: center;"></div>
     </div>
 
     <div class="card" style="text-align: center;">
@@ -185,18 +191,14 @@
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 
 <script>
-    // Kredit hisoblash funksiyasi
     function calculateLoan() {
         let amount = document.getElementById("moneyInput").value;
         if(amount > 0) {
             let totalInterest = amount * 0.17 * 3;
             document.getElementById("loanResult").innerHTML = "3 yillik bank foydasi: <br>" + totalInterest.toLocaleString() + " so'm";
-        } else {
-            alert("Iltimos, summani to'g'ri kiriting!");
         }
     }
 
-    // AI Model kodi
     const URL = "https://teachablemachine.withgoogle.com/models/UVIcOsqjY2/"; 
     let model, webcam, labelContainer, maxPredictions;
 
@@ -208,8 +210,7 @@
             maxPredictions = model.getTotalClasses();
             webcam = new tmImage.Webcam(220, 220, true);
             await webcam.setup();
-            await webcam.play();
-            window.requestAnimationFrame(loop);
+            await webcam.play();window.requestAnimationFrame(loop);
             document.getElementById("webcam-container").innerHTML = "";
             document.getElementById("webcam-container").appendChild(webcam.canvas);
             labelContainer = document.getElementById("label-container");
@@ -217,16 +218,13 @@
             for (let i = 0; i < maxPredictions; i++) {
                 labelContainer.appendChild(document.createElement("div"));
             }
-        } catch(e) {
-            alert("Kameraga ruxsat bering yoki model yuklanishini kuting.");
-        }
+        } catch(e) { alert("Kameraga ruxsat bering."); }
     }
-
-    async function loop() { webcam.update(); await predict(); window.requestAnimationFrame(loop); }async function predict() {
+    async function loop() { webcam.update(); await predict(); window.requestAnimationFrame(loop); }
+    async function predict() {
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction = prediction[i].className + ": " + (prediction[i].probability * 100).toFixed(0) + "%";
-            labelContainer.childNodes[i].innerHTML = classPrediction;
+            labelContainer.childNodes[i].innerHTML = prediction[i].className + ": " + (prediction[i].probability * 100).toFixed(0) + "%";
         }
     }
 </script>
