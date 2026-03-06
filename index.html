@@ -15,6 +15,8 @@
             --bg: #050505;
             --glass: rgba(255, 255, 255, 0.03);
             --border: rgba(255, 255, 255, 0.1);
+            --success: #2ecc71;
+            --warning: #ff9f43;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
@@ -72,20 +74,43 @@
         .cert-box { border-radius: 20px; overflow: hidden; border: 1px solid var(--border); cursor: pointer; transition: 0.3s; max-width: 300px; margin: 15px auto; }
         .cert-box img { width: 100%; display: block; }
 
-        /* 5. MENING DUNYOYIM */
-        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px; }
-        .gallery-item { border-radius: 15px; overflow: hidden; height: 180px; border: 1px solid var(--border); }
+        /* 5. MENING DUNYOYIM (Galereya) */
+        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px; }.gallery-item { border-radius: 15px; overflow: hidden; height: 180px; border: 1px solid var(--border); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .gallery-item:hover img { transform: scale(1.1); }/* 6. AI & KALKULYATOR */
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        /* 6. KUTUBXONA BO'LIMI */
+        .library-section { display: flex; flex-direction: column; gap: 12px; }
+        .lib-title { font-size: 16px; margin-bottom: 5px; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .book-item {
+            display: flex; align-items: center; padding: 15px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border); border-radius: 15px;
+            transition: 0.3s; position: relative;
+        }
+        .book-item:hover { background: rgba(255, 255, 255, 0.08); transform: translateX(10px); border-color: var(--primary); }
+        .book-item i { font-size: 20px; margin-right: 15px; }
+        .book-item.done i { color: var(--success); }
+        .book-item.planning i { color: var(--warning); }
+        .book-info { display: flex; flex-direction: column; }
+        .book-name { font-weight: 600; font-size: 16px; color: #fff; }
+        .book-author { font-size: 12px; color: #aaa; }
+        .status-tag {
+            position: absolute; right: 15px; font-size: 10px; text-transform: uppercase;
+            letter-spacing: 1px; padding: 4px 8px; border-radius: 8px; font-weight: 800;
+        }
+        .done .status-tag { background: rgba(46, 204, 113, 0.2); color: var(--success); }
+        .planning .status-tag { background: rgba(255, 159, 67, 0.2); color: var(--warning); }
+
+        /* 7. AI BO'LIMI */
         .btn {
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white; border: none; padding: 15px; border-radius: 15px;
             font-weight: 600; cursor: pointer; width: 100%; margin-top: 15px; transition: 0.3s;
         }
-        input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 15px; border-radius: 12px; color: white; margin-top: 10px; outline: none; }
         #webcam-container { margin: 20px auto; border-radius: 20px; overflow: hidden; border: 2px solid var(--primary); width: 220px; height: 220px; background: #000; display: flex; align-items: center; justify-content: center; }
 
-        /* 7. ALOQA */
+        /* 8. ALOQA */
         .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
         .social-links a { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: var(--glass); border: 1px solid var(--border); border-radius: 50%; color: white; font-size: 20px; text-decoration: none; transition: 0.3s; }
         .social-links a:hover { background: var(--primary); color: #000; transform: translateY(-5px); }
@@ -99,7 +124,6 @@
     <div class="card profile-header">
         <img src="profil.jpg" alt="Muxlisa" class="avatar" onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Muxlisa'">
         <h1>O'razova Muxlisa</h1>
-        
         <div class="info-list">
             <p><i class="fas fa-map-marker-alt"></i> <b>Manzil:</b> Qashqadaryo viloyati, Yakkabog' tumani, Navzo'r qishlog'i</p>
             <p><i class="fas fa-university"></i> <b>O'qish joyi:</b> Qarshi Davlat Universiteti</p>
@@ -107,13 +131,10 @@
             <p><i class="fas fa-code-branch"></i> <b>Yo'nalish:</b> Axborot Tizimlari va texnologiyalari</p>
             <p><i class="fas fa-user-graduate"></i> <b>Kurs:</b> 2-kurs, 024-34 guruh</p>
         </div>
-
         <p class="objective">
-            <b>Maqsadim:</b> Zamonaviy Axborot texnologiyalari va Sun'iy intellekt sohasida chuqur bilim olib, yurtimiz raqamli iqtisodiyotini rivojlantirishga o'z hissamni qo'shish hamda Big Data tahlili bo'yicha yetuk mutaxassis bo'lib yetishish.
+            <b>Maqsadim:</b> Zamonaviy Axborot texnologiyalari va Sun'iy intellekt sohasida chuqur bilim olib, yurtimiz raqamli iqtisodiyotini rivojlantirishga o'z hissamni qo'shish.
         </p>
-    </div>
-
-    <div class="card">
+    </div><div class="card">
         <h2 style="margin-bottom: 20px;"><i class="fas fa-graduation-cap"></i> Bilimlar darajasi</h2>
         <div class="skill-item">
             <div class="skill-info"><span>Big Data Tahlili</span><span>85%</span></div>
@@ -122,10 +143,6 @@
         <div class="skill-item">
             <div class="skill-info"><span>Axborot Tizimlari</span><span>80%</span></div>
             <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-info"><span>Matematik Modellashtirish</span><span>75%</span></div>
-            <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
         </div>
     </div>
 
@@ -137,7 +154,8 @@
                 <p>Respublika ilmiy-amaliy anjumani (2025).</p>
             </div>
             <i class="fab fa-google-drive"></i>
-        </a><a href="https://journalss.org/index.php/mod/article/view/9466" target="_blank" class="article-card">
+        </a>
+        <a href="https://journalss.org/index.php/mod/article/view/9466" target="_blank" class="article-card">
             <div class="article-info">
                 <h4>Qashqadaryo turizmida ERI o'rni</h4>
                 <p>Elektron raqamli imzo va turizm transformatsiyasi.</p>
@@ -160,6 +178,47 @@
             <div class="gallery-item"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500"></div>
             <div class="gallery-item"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=500"></div>
             <div class="gallery-item"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=500"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 style="margin-bottom: 25px;"><i class="fas fa-book-open"></i> Mening kutubxonam</h2>
+        <div class="library-section">
+            <h4 class="lib-title"><i class="fas fa-check-double"></i> O'qib chiqilgan:</h4>
+            <div class="book-item done">
+                <i class="fas fa-book"></i>
+                <div class="book-info">
+                    <span class="book-name">Odam bo'lish qiyin</span>
+                    <span class="book-author">O'lmas Umarbekov</span>
+                </div>
+                <span class="status-tag">O'qilgan</span>
+            </div>
+            <div class="book-item done">
+                <i class="fas fa-book"></i>
+                <div class="book-info">
+                    <span class="book-name">Dunyoning ishlari</span>
+                    <span class="book-author">O'tkir Hoshimov</span>
+                </div>
+                <span class="status-tag">O'qilgan</span>
+            </div>
+
+            <hr style="border: none; border-top: 1px dashed var(--border); margin: 20px 0;">
+
+            <h4 class="lib-title" style="color: var(--warning);"><i class="fas fa-hourglass-start"></i> O'qilmoqda / Rejada:</h4>
+            <div class="book-item planning"><i class="fas fa-bookmark"></i>
+                <div class="book-info">
+                    <span class="book-name">Ikki eshik orasi</span>
+                    <span class="book-author">O'tkir Hoshimov</span>
+                </div>
+                <span class="status-tag">Rejada</span>
+            </div>
+            <div class="book-item planning">
+                <i class="fas fa-bookmark"></i>
+                <div class="book-info">
+                    <span class="book-name">Binafshalar shulasi</span>
+                </div>
+                <span class="status-tag">Rejada</span>
+            </div>
         </div>
     </div>
 
@@ -207,11 +266,7 @@
         } catch(e) { alert("Kameraga ruxsat bering."); }
     }
 
-    async function loop() { 
-        webcam.update(); 
-        await predict(); 
-        window.requestAnimationFrame(loop); 
-    }
+    async function loop() { webcam.update(); await predict(); window.requestAnimationFrame(loop); }
 
     async function predict() {
         const prediction = await model.predict(webcam.canvas);
