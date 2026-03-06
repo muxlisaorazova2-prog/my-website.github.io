@@ -170,13 +170,6 @@
         <div id="label-container" style="margin-top: 15px; font-weight: 600; color: var(--primary);"></div>
     </div>
 
-    <div class="card">
-        <h2><i class="fas fa-coins"></i> Kredit Kalkulyatori (17%)</h2>
-        <input type="number" id="moneyInput" placeholder="Summani kiriting (so'm)">
-        <button class="btn" onclick="calculateLoan()">Bank foydasini hisoblash</button>
-        <div id="loanResult" style="margin-top: 20px; font-weight: 800; color: var(--primary); text-align: center;"></div>
-    </div>
-
     <div class="card" style="text-align: center;">
         <h2><i class="fas fa-paper-plane"></i> Aloqa</h2>
         <div class="social-links">
@@ -191,14 +184,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 
 <script>
-    function calculateLoan() {
-        let amount = document.getElementById("moneyInput").value;
-        if(amount > 0) {
-            let totalInterest = amount * 0.17 * 3;
-            document.getElementById("loanResult").innerHTML = "3 yillik bank foydasi: <br>" + totalInterest.toLocaleString() + " so'm";
-        }
-    }
-
     const URL = "https://teachablemachine.withgoogle.com/models/UVIcOsqjY2/"; 
     let model, webcam, labelContainer, maxPredictions;
 
@@ -210,7 +195,8 @@
             maxPredictions = model.getTotalClasses();
             webcam = new tmImage.Webcam(220, 220, true);
             await webcam.setup();
-            await webcam.play();window.requestAnimationFrame(loop);
+            await webcam.play();
+            window.requestAnimationFrame(loop);
             document.getElementById("webcam-container").innerHTML = "";
             document.getElementById("webcam-container").appendChild(webcam.canvas);
             labelContainer = document.getElementById("label-container");
@@ -220,7 +206,13 @@
             }
         } catch(e) { alert("Kameraga ruxsat bering."); }
     }
-    async function loop() { webcam.update(); await predict(); window.requestAnimationFrame(loop); }
+
+    async function loop() { 
+        webcam.update(); 
+        await predict(); 
+        window.requestAnimationFrame(loop); 
+    }
+
     async function predict() {
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
